@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Numbers Trangle </title>
+        <link rel="stylesheet" href="Two.css">
+            <script type="text/javascript">
+                    function printNumber() {
+                        document.getElementById("result").innerHTML = '';
+                        var limit = document.getElementById("limit").value;
+                    console.log(limit);
+                        for (var i = limit; i >= 1; i--) {
+                            var result = "";
+                            for (var j = i; j >= 1; j--) {
+                                result += i;
+                            }
+                            document.getElementById("result").insertAdjacentHTML('afterend', result+'<br>');
+                        }
+                    }
+            
+            </script>
+    </head>
+    <body>
+        <center><p>Enter the number : <input type="number" id="limit" /> <button onclick="printNumber()">Print</button></center>
+        <center><div id="result"></div></center>
+    </body>
+</html>

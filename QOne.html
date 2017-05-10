@@ -1,0 +1,44 @@
+<html>
+<head>
+    <link rel="stylesheet" href="one.css">
+	<script type="text/javascript">
+	function validateForm() {
+    var x = document.forms["testform"]["name"].value; 
+	var res = x.match(/a[a-z0-9]r/g);
+	
+    if (res) {
+    	var begin = /(^(a[a-z0-9]r))/.test(x);
+    	var end = /(a[a-z0-9]r$)/.test(x);
+    	if(begin)
+    	{
+    			document.getElementById("alertMessage").innerHTML ="Text a x r pattern not  Allowed ";
+                document.getElementById("name").style.borderColor = "red";
+                document.getElementById("alertMessage").style.paddingLeft ="792px";
+    	}
+    	else if(end)
+    	{
+    		document.getElementById("alertMessage").innerHTML ="Text a x r pattern not  Allowed ";
+            document.getElementById("name").style.borderColor = "red";
+            document.getElementById("alertMessage").style.paddingLeft ="792px";
+    	}
+    	else{
+    		document.getElementById("alertMessage").innerHTML ="Text a x r pattern Allowed ";
+			document.getElementById("name").style.borderColor = "green";
+            document.getElementById("alertMessage").style.paddingLeft ="301px";
+    	}
+        
+        return false;
+    }
+}
+	</script>
+</head>
+<body>
+	<form id="testform" onsubmit="return validateForm()">
+        <center>
+		<input type="text"  name="name" id="name" required/>
+		<input type="submit" value="Submit">
+        </center>
+        <div id="alertMessage" class="alertMsg"></div>
+	</form>
+</body>
+</html>
